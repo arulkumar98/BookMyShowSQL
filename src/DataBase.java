@@ -1,22 +1,23 @@
 import java.sql.*;
+
 public class DataBase {
     public void print() throws SQLException, ClassNotFoundException {
         //SQL Connection
         String url = "jdbc:mysql://localhost:3306/theatre";
         String userName = "root";
         String password = "245521";
-        Connection con = DriverManager.getConnection(url, userName, password);
-        Statement st = con.createStatement();
+        Connection connection = DriverManager.getConnection(url, userName, password);
+        Statement statement = connection.createStatement();
         String query = "select * from info;";
-        ResultSet rs = st.executeQuery(query);
+        ResultSet resultSet = statement.executeQuery(query);
         //print the sql
         String userData;
-        while (rs.next()) {
+        while (resultSet.next()) {
             System.out.println("---------------------------------------------------------------------------------------------------");
-            userData = "ID " + rs.getInt(1) + " | " + rs.getString(2) + " | Now Showing  " + rs.getString(3) + " | " + rs.getString(4) + " | " + rs.getInt(5);
+            userData = "ID " + resultSet.getInt(1) + " | " + resultSet.getString(2) + " | Now Showing  " + resultSet.getString(3) + " | " + resultSet.getString(4) + " Ticket Price Rs." + resultSet.getInt(5);
             System.out.println(userData);
         }
-        st.close();
-        con.close();
+        statement.close();
+        connection.close();
     }
 }
