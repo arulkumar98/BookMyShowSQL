@@ -27,6 +27,7 @@ public class Admin {
                 add.addNew();
             } else {
                 System.out.println("Access Denied");
+                forAdmin();
             }
         }
     }
