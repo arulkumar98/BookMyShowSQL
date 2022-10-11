@@ -1,12 +1,10 @@
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Scanner;
-
 public class Admin {
     DataBase data = new DataBase();
     CustomerDatabase details = new CustomerDatabase();
     Scanner in = new Scanner(System.in);
-
     public void forAdmin() throws SQLException, ClassNotFoundException {
         System.out.println("Enter User Name: ");
         String adminName = "admin";
@@ -25,12 +23,10 @@ public class Admin {
             } else if (Objects.equals(input, "2")) {
                 AdminAccess add = new AdminAccess();
                 add.addNew();
-
-            } else
+            } else {
                 System.out.println("Access Denied");
+            }
         }
     }
-
-
 }
 

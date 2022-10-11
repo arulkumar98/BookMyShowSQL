@@ -1,10 +1,8 @@
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Scanner;
-
 public class CustomerInfo {
     Scanner in = new Scanner(System.in);
-
     public void checkForLogin() throws SQLException, ClassNotFoundException {
         CustomerDatabase dataUpdate = new CustomerDatabase();
         System.out.println("Please Below details for booking");
@@ -38,6 +36,5 @@ public class CustomerInfo {
             email = in.next();
         }
         dataUpdate.update(theaterName, name, email, mobileNo);
-
     }
 }

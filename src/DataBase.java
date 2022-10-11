@@ -1,5 +1,4 @@
 import java.sql.*;
-
 public class DataBase {
     public void print() throws SQLException, ClassNotFoundException {
         //SQL Connection
@@ -20,6 +19,4 @@ public class DataBase {
         st.close();
         con.close();
     }
-
-
 }

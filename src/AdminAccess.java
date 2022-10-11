@@ -3,7 +3,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
-
 public class AdminAccess {
     public void addNew() throws SQLException, ClassNotFoundException {
         Scanner in = new Scanner(System.in);
@@ -11,17 +10,15 @@ public class AdminAccess {
         System.out.println("Entre the Theatre ID");
         int id = in.nextInt();
         System.out.println("Entre the theatre name ");
-        String thName = in.next();
+        String theatreName = in.next();
         System.out.println("Entre the movie Name");
         String movie = in.next();
         System.out.println("Entre the theatre Tech");
         String tech = in.next();
         System.out.println("Entre the Theatre Seat Count");
         int seat = in.nextInt();
-        updateTheatre(id, thName, movie, tech, seat);
+        updateTheatre(id, theatreName, movie, tech, seat);
     }
-
-
     public void updateTheatre(int theaterId, String ThName, String movieName, String thTech, int seatCount) throws SQLException, ClassNotFoundException {
         //SQL Connection
         String url = "jdbc:mysql://localhost:3306/theatre";

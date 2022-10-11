@@ -1,5 +1,4 @@
 import java.sql.*;
-
 public class CustomerDatabase {
     public void update(String theaterName, String cosName, String cosEmail, String number) throws SQLException, ClassNotFoundException {
         //SQL Connection
@@ -22,7 +21,6 @@ public class CustomerDatabase {
         statement.close();
         con.close();
     }
-
     public void printUser() throws SQLException, ClassNotFoundException {
         //SQL Connection
         String url = "jdbc:mysql://localhost:3306/theatre";
@@ -36,7 +34,7 @@ public class CustomerDatabase {
         String userData;
         while (rs.next()) {
             System.out.println("---------------------------------------------------------------------------------------------------");
-            userData = "Selected Theatre :" + rs.getString(1) + " User Name: " + rs.getString(2) + " E-Mail " + rs.getString(3) + " Mobile Number " + rs.getString(4);
+            userData = "Selected Theatre: " + rs.getString(1) + "|  User Name: " + rs.getString(2) + " | E-Mail: " + rs.getString(3) + " | Mobile Number: " + rs.getString(4);
             System.out.println(userData);
         }
         st.close();
