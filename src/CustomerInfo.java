@@ -3,13 +3,13 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class CustomerInfo {
-    Scanner in = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
     public void checkForLogin() throws SQLException, ClassNotFoundException {
         CustomerDatabase dataUpdate = new CustomerDatabase();
         System.out.println("Please Below details for booking");
         System.out.println("Theater ID");
-        String id = in.next();
+        String id = scanner.next();
         String theaterName = "";
         if (Objects.equals(id, "1")) {
             theaterName = "Pss Multiplex Tenkasi";
@@ -22,21 +22,23 @@ public class CustomerInfo {
             checkForLogin();
         }
         System.out.println("Entre the Name");
-        String name = in.next();
+        String name = scanner.next();
         System.out.println("Entre the mobile number");
-        String mobileNo = in.next();
+        String mobileNo = scanner.next();
         String num = "^\\d{10}$";
         while (!mobileNo.matches(num)) {
             System.out.println("Please enter the valid Mobile Number");
-            mobileNo = in.next();
+            mobileNo = scanner.next();
         }
         System.out.println("Entre E-Mail id");
-        String email = in.next();
+        String email = scanner.next();
         String regex = "^(.+)@(.+)$";
         while (!email.matches(regex)) {
             System.out.println("Please enter the valid e-mail address");
-            email = in.next();
+            email = scanner.next();
         }
-        dataUpdate.update(theaterName, name, email, mobileNo);
+        System.out.println("Enter the date in this format dd-mm-yyyy");
+        String dateInput = scanner.next();
+        dataUpdate.update(theaterName, name, email, mobileNo, dateInput);
     }
 }

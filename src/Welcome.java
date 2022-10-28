@@ -7,7 +7,9 @@ public class Welcome {
     Admin login = new Admin();
 
     public void begin() throws SQLException, ClassNotFoundException {
-        System.out.println("_________*__________*______________*______________*\n Welcome Press 1 for Booking \n Press 2 for Admin login ");
+        System.out.println("_________*__________*______________*______________*\n " +
+                "Welcome Press 1 for Booking \n " +
+                "Press 2 for Admin login ");
         Scanner in = new Scanner(System.in);
         byte input = 0;
         while (true) {
